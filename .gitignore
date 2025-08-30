@@ -1,6 +1,7 @@
 node_modules
 
-dist
+# Build output
+# dist
 
 .env
 

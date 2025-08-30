@@ -1,24 +1,23 @@
 import * as THREE from 'three';
 import Papa from 'papaparse';
-import './style.css';
 
-// Basic Three.js scene
+// Basic Three.js scene sized for popup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
-  window.innerWidth / window.innerHeight,
+  600 / 400, // Fixed aspect ratio for popup
   0.1,
   1000
 );
 const renderer = new THREE.WebGLRenderer({antialias: true});
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(600, 400);
 document.getElementById('app').appendChild(renderer.domElement);
 
 camera.position.z = 7;
 
-// Load CSV
+// Load CSV from extension directory
 async function loadCSV() {
-  const url = '/cratediggerDB.csv';
+  const url = chrome.runtime.getURL('cratediggerDB.csv');
   try {
     const response = await fetch(url);
     const text = await response.text();
@@ -49,10 +48,3 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
-// Responsive canvas
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
