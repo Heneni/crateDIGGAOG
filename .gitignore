@@ -1,23 +1,16 @@
-node_modules
+# Chrome Extension - no build artifacts needed
+node_modules/
+dist/
+*.log
 
-dist
-
+# Development files
 .env
-
 .DS_Store
-
 *.local
+.idea/
+.vscode/
 
-.vercel
-
-.idea
-
-.vscode
-
-npm-debug.log*
-
-yarn-debug.log*
-
-yarn-error.log*
-
-pnpm-debug.log*
+# Temporary files
+*.tmp
+*.temp
+/tmp/
