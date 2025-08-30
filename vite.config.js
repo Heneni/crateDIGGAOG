@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
   base: './',
@@ -10,6 +11,11 @@ export default defineConfig({
   server: {
     fs: {
       allow: ['..']
+    }
+  },
+  resolve: {
+    alias: {
+      '/src': resolve(__dirname, 'src')
     }
   }
 });
