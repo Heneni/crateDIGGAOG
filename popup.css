@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  height: 300px;
+  background: #181818;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 3px;
+  pointer-events: none;
+}
